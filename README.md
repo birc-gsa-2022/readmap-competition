@@ -1,2 +1,3 @@
-# readmap-competition
-Competition for final project
+# Competition for final project
+
+THIS IS A TEMPLATE REPOSITORY. CREATE A REPO IN THE YEARLY ORGANISATIONS AND UPDATE THE CONFIGURATION TO COMPARE THE CONTESTANTS THERE.
