@@ -22,18 +22,34 @@ function get_status() {
     fi
 }
 
-# Pull working solutions down
+echo
+echo "CHECKING IF PROJECTS TEST SUCCESSFULLY"
+echo
 passing=()
-for team in $teams; do
+for team in ${teams[@]}; do
     status=$(get_status $team)
-    echo $team $status
     passing+=($status)
 done
 
 success=()
-for i in ${passing[@]}; do
+for i in ${!passing[@]}; do
+    echo ${teams[$i]} ${passing[$i]}
     if [[ ${passing[$i]} == 'pass' ]]; then
-        echo ${teams[$i]} ${passing[$i]}
+        success+=(${teams[$i]})
     fi
 done
-echo ${passing[@]}
+
+echo
+echo "DOWNLOADING PASSING TESTS"
+echo
+[[ -d projects ]] || mkdir projects
+for team in ${success[@]}; do
+    teamdir="projects/$team"
+    if [[ -d $teamdir ]]; then
+        echo "Pulling ${team}..."
+        (cd $teamdir ; git pull)
+    else
+        echo "Downloading ${team}..."
+        gh repo clone $org/$team $teamdir
+    fi
+done

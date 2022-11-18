@@ -1,9 +1,10 @@
 # Configuration file
 
-# Read repos into array
-readarray -d "\n" teams < teams.txt
-
+# The organisation and the teams
 org="birc-gsa-2022"
-gh_url="https://github.com/${org}"
-
+teams=(
+    project-5-python-asg
+    project-5-python-armando-christian-perez
+    project-5-go-holdet
+)
 
