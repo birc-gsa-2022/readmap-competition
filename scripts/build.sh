@@ -1,7 +1,6 @@
 
 [[ -z ${gsa_build_included+present} ]] || return
 gsa_build_included="gsa_build_included"
-echo "sourcing build"
 
 source "scripts/utils.sh"
 
@@ -32,8 +31,9 @@ function build_team_project() {
 }
 
 function build_projects() {
-    local -a teams
-    for team in ${passing[@]}; do
+    local -n teams=$1
+    local team
+    for team in ${teams[@]}; do
         build_team_project $team
     done
 }

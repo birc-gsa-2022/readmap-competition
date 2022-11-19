@@ -7,5 +7,8 @@ teams=(
     project-5-python-armando-christian-perez
     project-5-go-holdet
 )
-
-# FIXME: add mine
+mydirs=(
+    readmap-python
+    readmap-go
+    readmap-c-cmake
+)

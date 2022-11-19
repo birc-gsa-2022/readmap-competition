@@ -1,6 +1,5 @@
 [[ -z ${gsa_pull_included+present} ]] || return
 gsa_pull_included="gsa_pull_included"
-echo "sourcing pull"
 
 source "scripts/utils.sh"
 
@@ -23,7 +22,6 @@ function get_status() {
     local teams=($@)
     verbose
     verbose "CHECKING IF PROJECTS TEST SUCCESSFULLY"
-    verbose
     for team in ${teams[@]}; do
         verbose -n "${team}..."
         local status=$(repo_status "${org}/${team}")
@@ -59,16 +57,13 @@ function passing_teams() {
     done
 }
 
-function download_repos() {
-    local -n _passing=$1
-
-    verbose
-    verbose "DOWNLOADING PASSING TESTS"
-    verbose
+function download_project_repos() {
+    local org=$1
+    local -n _repos=$2
 
     [[ -d project_repos ]] || mkdir project_repos
     
-    for team in ${_passing[@]}; do
+    for team in ${_repos[@]}; do
         teamdir="project_repos/$team"
         if [[ -d $teamdir ]]; then
             verbose "Pulling ${team}..."
@@ -79,4 +74,3 @@ function download_repos() {
         fi
     done
 }
-

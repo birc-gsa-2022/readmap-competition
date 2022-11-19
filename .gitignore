@@ -1,1 +1,6 @@
 project_repos
+preprocessing.txt
+mapping.txt
+__PERF__
+__TEST__
+gsa.yaml

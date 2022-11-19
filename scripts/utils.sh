@@ -1,7 +1,6 @@
 
 [[ -z ${gsa_utils_included+present} ]] || return
 gsa_utils_included="gsa_utils_included"
-echo "sourcing utils"
 
 # Utility functions
 verbose()    { echo $* > /dev/stderr ; }
