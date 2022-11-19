@@ -1,6 +1,6 @@
 # Configuration file
 
-# The organisation and the teams
+# The organisation and the competing teams
 org="birc-gsa-2022"
 teams=(
     project-5-python-asg
