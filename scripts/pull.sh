@@ -1,11 +1,8 @@
-#!/usr/local/bin/bash
-# FIXME: find more robust way to get the most recent bash
+[[ -z ${gsa_pull_included+present} ]] || return
+gsa_pull_included="gsa_pull_included"
+echo "sourcing pull"
 
-source config.sh
-
-function verbose() {
-    echo $* > /dev/stderr
-}
+source "scripts/utils.sh"
 
 function workflow_action_id() {
     local repo=$1
@@ -29,9 +26,7 @@ function get_status() {
     verbose
     for team in ${teams[@]}; do
         verbose -n "${team}..."
-        local repo=$(repo $team)
-        #local status=$(repo_status ${repo})
-        status='pass' # FIXME
+        local status=$(repo_status "${org}/${team}")
         verbose $status
         echo $status # returning status
     done
@@ -84,10 +79,4 @@ function download_repos() {
         fi
     done
 }
-
-status=( $(get_status ${teams[@]}) )
-print_status teams status > /dev/stdout # FIXME: write to file
-
-passing=( $(passing_teams teams status) )
-download_repos passing
 
