@@ -33,12 +33,12 @@ EOF
 reference-tool: READMAP-PYTHON
 
 genomes:
-  length: [100]
-  chromosomes: 1
+  length: [1000, 2000]
+  chromosomes: 10
 
 reads:
   number: 10
-  length: 10
+  length: [50, 100]
   edits: [1, 2]
 
 EOF
