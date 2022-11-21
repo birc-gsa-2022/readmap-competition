@@ -16,9 +16,7 @@ function build_team_project() {
     local -a commands
     get_build_commands $team commands
 
-    verbose
-    verbose "BUILDING FOR ${team^^}"
-    verbose
+    verbose $(yellow "BUILDING FOR ${team^^}")
     {
         cd $(build_dir $team)
         for cmd in "${commands[@]}"; do

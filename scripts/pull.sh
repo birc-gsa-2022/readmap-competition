@@ -20,12 +20,11 @@ function repo_status() {
 
 function get_status() {
     local teams=($@)
-    verbose
-    verbose "CHECKING IF PROJECTS TEST SUCCESSFULLY"
+    verbose $(yellow "CHECKING IF PROJECTS TEST SUCCESSFULLY")
     for team in ${teams[@]}; do
-        verbose -n "${team}..."
+        verbose -n $(cyan "${team}...")
         local status=$(repo_status "${org}/${team}")
-        verbose $status
+        [[ $status == "pass" ]] && verbose $(green $status) || verbose $(red $status)
         echo $status # returning status
     done
     verbose
@@ -69,7 +68,7 @@ function download_project_repos() {
             verbose "Pulling ${team}..."
             (cd $teamdir ; git pull)
         else
-            verbose "Downloading ${team}..."
+            verbose $(yellow "Downloading ${team}...")
             gh repo clone $org/$team $teamdir
         fi
     done

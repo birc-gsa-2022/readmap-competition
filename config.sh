@@ -6,6 +6,7 @@ teams=(
     project-5-python-asg
     project-5-python-armando-christian-perez
     project-5-go-holdet
+    project-5-python-illiterate-apes
 )
 mydirs=(
     readmap-python
