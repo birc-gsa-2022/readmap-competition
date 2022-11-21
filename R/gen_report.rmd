@@ -99,7 +99,7 @@ pre_perf <- read.csv("../preprocessing.txt", header = TRUE) |>
 ```{r plot_perf}
 chrom_lens <- unique(pre_perf$Chromosome.length)
 for (clen in chrom_lens) {
-    chrom_data <- map_perf |> 
+    chrom_data <- pre_perf |> 
       filter_genome(clen) |>
       mutate(TL = str_c(Tool, ' [', Language, ']')) |>
       group_by(TL) |> 
