@@ -34,6 +34,7 @@ build_projects mydirs   || error $(red "Couldn't build my solutions")
 verbose $(blue "RUNNING GSA PERFORMANCE TOOL")
 generate_yaml_spec passing mydirs > gsa.yaml          || error $(red "Error generating gsa yaml")
 gsa perf -p preprocessing.txt -m mapping.txt gsa.yaml || error $(red "Error running gsa")
+verbose $(green "Slow stuff finally done!")
 
 verbose $(blue "GENERATING REPORT")
 Rscript -e "rmarkdown::render('R/gen_report.rmd', output_file = '../README.md')"
