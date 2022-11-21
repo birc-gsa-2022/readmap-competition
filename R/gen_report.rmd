@@ -29,6 +29,26 @@ cut_lang <- function(lang, proj) {
   )
 }
 
+rename_mine <- function(proj) {
+  proj |> 
+    when(
+      str_starts(., "readmap") ~ {
+        x <- str_split(., "-", n = 2)
+        paste0(x[[1]][2], '-mailund')
+      },
+      ~ proj
+    )
+}
+
+transform_projects <- function(data) {
+  data |>
+    mutate(
+      Tool = str_to_lower(Tool) |> str_replace_all("\\.", "-") |> str_replace("project-5-",""),
+      Tool = map_chr(Tool, rename_mine),
+      Language = map_chr(Tool, lang),
+      Tool = map2_chr(Language, Tool, cut_lang) |> str_to_title() |> str_replace_all("-", " ")
+    ) 
+}
 
 ```
 
@@ -49,11 +69,33 @@ knitr::kable(status, "pipe")
 
 ## Preprocessing performance
 
-```{r}
+```{r read_perf}
 pre_perf <- read.csv("../preprocessing.txt", header = TRUE) |>
-  split_project_encoding()
-pre_perf
+  pivot_longer(-(Chromosomes:Chromosome.length), names_to = "Tool", values_to = "Time") |>
+  transform_projects()
+```
+
+```{r plot_perf}
+pre_perf |> 
+  mutate(GL = str_c(Tool, Language),
+         Language = fct_relevel(Language, "Python", "Go", "C"),
+         GL = fct_reorder(GL, as.integer(Language))) |>
+  ggplot(aes(x = Tool, y = Time, colour = Language, fill = Language)) +
+  geom_boxplot() +
+  facet_grid(. ~ Language, scales = "free_x", space = "free_x") +
+  xlab("") +
+  theme_classic() +
+  scale_fill_brewer(palette="Set2") +
+  scale_colour_brewer(palette="Set2") +
+  theme(legend.position="bottom")
 ```
 
 ## Mapping performance
 
+```{r read_map}
+map_perf <- read.csv("../mapping.txt", header = TRUE) |>
+  pivot_longer(-(Chromosomes:Edits), names_to = "Tool", values_to = "Time") |>
+  transform_projects()
+
+map_perf
+```
