@@ -29,9 +29,18 @@ readmappers that pass the Github Actions tests.
 <td style="text-align: left;">Go</td>
 <td style="text-align: left;">fail</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">illiterate-apes</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: left;">fail</td>
+</tr>
 </tbody>
 </table>
 
 ## Preprocessing performance
 
+![](../README_files/figure-markdown_strict/plot_perf-1.png)
+
 ## Mapping performance
+
+![](../README_files/figure-markdown_strict/read_map-1.png)
