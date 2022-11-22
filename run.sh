@@ -32,7 +32,7 @@ verbose $(blue "BUILDING PROJECTS")
 build_projects parsing  || error $(red "Couldn't build projects")
 build_projects mydirs   || error $(red "Couldn't build my solutions")
 
-verbose $(blue "RUNNING GSA PERFORMANCE TOOL")
+verbose $(blue "RUNNING GSA PERFORMANCE TOOL") $(orange "(this will be slow...)")
 generate_yaml_spec passing mydirs > gsa.yaml                                || error $(red "Error generating gsa yaml")
 gsa perf -n ${gsa_rep} -p res/preprocessing.txt -m res/mapping.txt gsa.yaml || error $(red "Error running gsa")
 verbose $(green "Slow stuff finally done!")
