@@ -43,4 +43,4 @@ readmappers that pass the Github Actions tests.
 
 ## Mapping performance
 
-![](README_files/figure-markdown_strict/read_map-1.png)![](README_files/figure-markdown_strict/read_map-2.png)![](README_files/figure-markdown_strict/read_map-3.png)![](README_files/figure-markdown_strict/read_map-4.png)![](README_files/figure-markdown_strict/read_map-5.png)![](README_files/figure-markdown_strict/read_map-6.png)
+![](README_files/figure-markdown_strict/read_map-1.png)![](README_files/figure-markdown_strict/read_map-2.png)![](README_files/figure-markdown_strict/read_map-3.png)![](README_files/figure-markdown_strict/read_map-4.png)![](README_files/figure-markdown_strict/read_map-5.png)![](README_files/figure-markdown_strict/read_map-6.png)![](README_files/figure-markdown_strict/read_map-7.png)![](README_files/figure-markdown_strict/read_map-8.png)![](README_files/figure-markdown_strict/read_map-9.png)![](README_files/figure-markdown_strict/read_map-10.png)![](README_files/figure-markdown_strict/read_map-11.png)![](README_files/figure-markdown_strict/read_map-12.png)
