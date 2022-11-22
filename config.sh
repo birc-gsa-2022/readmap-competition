@@ -13,3 +13,5 @@ mydirs=(
     readmap-go
     readmap-c-cmake
 )
+
+gsa_rep=20  # Number of repeats when measuring performance
