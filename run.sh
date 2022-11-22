@@ -18,7 +18,7 @@ fi
 
 verbose $(blue "GETTING PROJECT STATUS FROM GITHUB")
 status=( $(get_status ${teams[@]}) )
-print_status teams status > status.txt
+print_status teams status > res/status.txt
 verbose
 
 verbose $(blue "DOWNLOADING REPOS THAT PASS THEIR TESTS")
@@ -33,11 +33,11 @@ build_projects parsing  || error $(red "Couldn't build projects")
 build_projects mydirs   || error $(red "Couldn't build my solutions")
 
 verbose $(blue "RUNNING GSA PERFORMANCE TOOL")
-generate_yaml_spec passing mydirs > gsa.yaml          || error $(red "Error generating gsa yaml")
-gsa perf -p preprocessing.txt -m mapping.txt gsa.yaml || error $(red "Error running gsa")
+generate_yaml_spec passing mydirs > gsa.yaml                  || error $(red "Error generating gsa yaml")
+gsa perf -p res/preprocessing.txt -m res/mapping.txt gsa.yaml || error $(red "Error running gsa")
 verbose $(green "Slow stuff finally done!")
 
 verbose $(blue "GENERATING REPORT")
-Rscript -e "rmarkdown::render('R/gen_report.rmd', output_file = '../README.md')"
+Rscript -e "rmarkdown::render('README.rmd')"
 
 deactivate # leave the python environment again
