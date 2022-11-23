@@ -5,9 +5,13 @@ org="birc-gsa-2022"
 teams=(
     project-5-python-asg
     project-5-python-armando-christian-perez
-    project-5-go-holdet
+    project-5-python-team
     project-5-python-illiterate-apes
+    
+    project-5-go-holdet
+
     project-5-c-o-no
+    project-5-c-quadratic-solution
 )
 mydirs=(
     readmap-python
