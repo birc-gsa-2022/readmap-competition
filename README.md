@@ -25,8 +25,8 @@ readmappers that pass the Github Actions tests.
 <td style="text-align: left;">pass</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">holdet</td>
-<td style="text-align: left;">Go</td>
+<td style="text-align: left;">team</td>
+<td style="text-align: left;">Python</td>
 <td style="text-align: left;">fail</td>
 </tr>
 <tr class="even">
@@ -35,7 +35,17 @@ readmappers that pass the Github Actions tests.
 <td style="text-align: left;">fail</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">holdet</td>
+<td style="text-align: left;">Go</td>
+<td style="text-align: left;">fail</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">o-no</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">fail</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">quadratic-solution</td>
 <td style="text-align: left;">C</td>
 <td style="text-align: left;">fail</td>
 </tr>

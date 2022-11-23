@@ -7,3 +7,5 @@ gsa.yaml
 status.txt
 .Rproj.user
 gsa
+.RData
+.Rhistory
