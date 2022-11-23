@@ -7,6 +7,7 @@ teams=(
     project-5-python-armando-christian-perez
     project-5-go-holdet
     project-5-python-illiterate-apes
+    project-5-c-o-no
 )
 mydirs=(
     readmap-python
@@ -14,4 +15,6 @@ mydirs=(
     readmap-c-cmake
 )
 
+gsa_genome_lens=(1000 5000 10000)
+gsa_reads_lens=(100 200)
 gsa_rep=20  # Number of repeats when measuring performance

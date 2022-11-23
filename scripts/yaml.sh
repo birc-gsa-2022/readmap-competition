@@ -3,6 +3,17 @@
 [[ -z ${gsa_yaml_included+present} ]] || return
 gsa_yaml_included="gsa_yaml_included"
 
+function yaml_list() {
+  local -n data=$1
+  delim=""
+  joined=""
+  for item in "${data[@]}"; do
+    joined="$joined$delim$item"
+    delim=", "
+  done
+  echo "[$joined]"
+}
+
 
 function generate_tool_spec() {
     local team=$1
@@ -33,12 +44,12 @@ EOF
 reference-tool: READMAP-PYTHON
 
 genomes:
-  length: [1000, 5000, 10000]
+  length: $(yaml_list gsa_genome_lens)
   chromosomes: 10
 
 reads:
   number: 10
-  length: [100, 200]
+  length: $(yaml_list gsa_reads_lens)
   edits: [1, 2]
 
 EOF

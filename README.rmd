@@ -17,6 +17,7 @@ lang <- function(proj) {
       str_starts(., "python")    ~ "Python",
       str_starts(., "go")        ~ "Go",
       str_starts(., "c-cmake")   ~ "C",
+      str_starts(., "c")         ~ "C",
       ~ "Unknown"
     )
 }
@@ -25,7 +26,7 @@ cut_lang <- function(lang, proj) {
   lang |> when(
     (. == "Python") ~ str_replace(proj, "python-", ""),
     (. == "Go")     ~ str_replace(proj, "go-", ""),
-    (. == "C")      ~ str_replace(proj, "c-cmake-", "")
+    (. == "C")      ~ proj |> str_replace("c-cmake-", "") |> str_replace("c-", "")
   )
 }
 
