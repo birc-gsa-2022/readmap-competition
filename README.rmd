@@ -113,7 +113,7 @@ for (clen in chrom_lens) {
   plt <- chrom_data |> 
     ggplot(aes(x = TL, y = Time, colour = Language, fill = Language)) +
     geom_violin() +
-    #facet_grid(. ~ Chromosome.length, scales = "free_x", space = "free_x") +
+    facet_grid(. ~ Chromosome.length, scales = "free_x", space = "free_x") +
     xlab("") +
     scale_x_discrete(breaks=chrom_data$TL, labels=chrom_data$Tool) +
     theme_classic() +
@@ -152,7 +152,7 @@ for (clen in chrom_lens) {
       plt <- chrom_data |> 
         ggplot(aes(x = TL, y = Time, colour = Language, fill = Language)) +
         geom_violin() +
-        facet_grid(Read.length ~ ., scales = "free_x", space = "free_x") +
+        #facet_grid(Read.length ~ ., scales = "free_x", space = "free_x") +
         xlab("") +
         scale_x_discrete(breaks=chrom_data$TL, labels=chrom_data$Tool) +
         theme_classic() +
