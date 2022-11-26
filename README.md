@@ -37,7 +37,7 @@ readmappers that pass the Github Actions tests.
 <tr class="odd">
 <td style="text-align: left;">holdet</td>
 <td style="text-align: left;">Go</td>
-<td style="text-align: left;">fail</td>
+<td style="text-align: left;">pass</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">o-no</td>

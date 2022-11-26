@@ -19,6 +19,7 @@ mydirs=(
     readmap-c-cmake
 )
 
-gsa_genome_lens=(10000 20000)
-gsa_reads_lens=(200)
+#gsa_genome_lens=(10000 20000)
+gsa_genome_lens=(1000 2000)
+gsa_reads_lens=(50)
 gsa_rep=20  # Number of repeats when measuring performance
