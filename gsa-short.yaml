@@ -1,0 +1,29 @@
+tools:
+  PROJECT-5-PYTHON-ARMANDO-CHRISTIAN-PEREZ:
+    preprocess: "{root}/project_repos/project-5-python-armando-christian-perez/readmap -p {genome}"
+    map: "{root}/project_repos/project-5-python-armando-christian-perez/readmap -d {e} {genome} {reads} > {outfile}"
+  PROJECT-5-GO-HOLDET:
+    preprocess: "{root}/project_repos/project-5-go-holdet/readmap -p {genome}"
+    map: "{root}/project_repos/project-5-go-holdet/readmap -d {e} {genome} {reads} > {outfile}"
+  READMAP-PYTHON:
+    preprocess: "{root}/project_repos/readmap-python/readmap -p {genome}"
+    map: "{root}/project_repos/readmap-python/readmap -d {e} {genome} {reads} > {outfile}"
+  READMAP-GO:
+    preprocess: "{root}/project_repos/readmap-go/readmap -p {genome}"
+    map: "{root}/project_repos/readmap-go/readmap -d {e} {genome} {reads} > {outfile}"
+  READMAP-C-CMAKE:
+    preprocess: "{root}/project_repos/readmap-c-cmake/readmap -p {genome}"
+    map: "{root}/project_repos/readmap-c-cmake/readmap -d {e} {genome} {reads} > {outfile}"
+
+
+reference-tool: READMAP-PYTHON
+
+genomes:
+  length: [1000, 2000]
+  chromosomes: 10
+
+reads:
+  number: 10
+  length: [50]
+  edits: [1, 2]
+
