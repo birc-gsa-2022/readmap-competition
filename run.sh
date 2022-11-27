@@ -64,4 +64,5 @@ verbose $(green "Slow stuff finally done!")
 verbose $(blue "GENERATING REPORT")
 Rscript -e "rmarkdown::render('README.rmd')"
 
+verbose $(green "All done!")
 deactivate # leave the python environment again

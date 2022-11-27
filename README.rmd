@@ -188,7 +188,7 @@ load_mapping("res/short-mapping.txt") |> plot_mapping()
 
 ## Competitors
 
-These are the teams that are fast enough for a longer run...
+These are the teams that are fast enough for a longer run. Improve your speed to get on it.
 
 ### Preprocessing
 

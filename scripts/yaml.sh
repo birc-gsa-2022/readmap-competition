@@ -24,6 +24,7 @@ function generate_tool_spec() {
 EOF
 }
 
+# FIXME: maybe parameterise with number of reads as well?
 function generate_yaml_spec() {
     local -n teams=$1
     local -n mine=$2

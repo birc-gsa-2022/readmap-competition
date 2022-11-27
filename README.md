@@ -62,7 +62,8 @@ readmappers that pass the Github Actions tests.
 
 ## Competitors
 
-These are the teams that are fast enough for a longer run…
+These are the teams that are fast enough for a longer run. Improve your
+speed to get on it.
 
 ### Preprocessing
 
