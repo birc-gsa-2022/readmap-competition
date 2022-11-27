@@ -13,6 +13,7 @@ teams=(
     project-5-c-o-no
     project-5-c-quadratic-solution
 )
+
 mydirs=(
     readmap-python
     readmap-go
