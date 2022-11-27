@@ -23,7 +23,7 @@ genomes:
   chromosomes: 10
 
 reads:
-  number: 10
+  number: 100
   length: [50]
   edits: [1, 2]
 
