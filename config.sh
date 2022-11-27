@@ -13,13 +13,19 @@ teams=(
     project-5-c-o-no
     project-5-c-quadratic-solution
 )
+long_teams=(
+    project-5-python-armando-christian-perez
+)
 mydirs=(
     readmap-python
     readmap-go
     readmap-c-cmake
 )
 
-#gsa_genome_lens=(10000 20000)
+gsa_rep=20  # Number of repeats when measuring performance
+
 gsa_genome_lens=(1000 2000)
 gsa_reads_lens=(50)
-gsa_rep=20  # Number of repeats when measuring performance
+
+gsa_long_genome_lens=(10000 20000)
+gsa_long_reads_lens=(200)

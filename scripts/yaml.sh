@@ -27,6 +27,8 @@ EOF
 function generate_yaml_spec() {
     local -n teams=$1
     local -n mine=$2
+    local genome_lens=$3
+    local read_lens=$4
     local team
 
     cat <<EOF
@@ -44,12 +46,12 @@ EOF
 reference-tool: READMAP-PYTHON
 
 genomes:
-  length: $(yaml_list gsa_genome_lens)
+  length: $(yaml_list $genome_lens)
   chromosomes: 10
 
 reads:
-  number: 10
-  length: $(yaml_list gsa_reads_lens)
+  number: 100
+  length: $(yaml_list $read_lens)
   edits: [1, 2]
 
 EOF

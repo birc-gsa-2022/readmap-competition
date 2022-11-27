@@ -52,10 +52,22 @@ readmappers that pass the Github Actions tests.
 </tbody>
 </table>
 
-## Preprocessing performance
+## Preprocessing performance (full competition)
 
-![](README_files/figure-markdown_strict/plot_perf-1.png)![](README_files/figure-markdown_strict/plot_perf-2.png)
+![](README_files/figure-markdown_strict/plot_short-1.png)![](README_files/figure-markdown_strict/plot_short-2.png)
 
-## Mapping performance
+## Mapping performance (full list)
 
-![](README_files/figure-markdown_strict/read_map-1.png)![](README_files/figure-markdown_strict/read_map-2.png)![](README_files/figure-markdown_strict/read_map-3.png)![](README_files/figure-markdown_strict/read_map-4.png)
+![](README_files/figure-markdown_strict/unnamed-chunk-2-1.png)![](README_files/figure-markdown_strict/unnamed-chunk-2-2.png)![](README_files/figure-markdown_strict/unnamed-chunk-2-3.png)![](README_files/figure-markdown_strict/unnamed-chunk-2-4.png)
+
+## Competitors
+
+These are the teams that are fast enough for a longer run…
+
+### Preprocessing
+
+![](README_files/figure-markdown_strict/unnamed-chunk-3-1.png)![](README_files/figure-markdown_strict/unnamed-chunk-3-2.png)
+
+### Mapping
+
+![](README_files/figure-markdown_strict/unnamed-chunk-4-1.png)![](README_files/figure-markdown_strict/unnamed-chunk-4-2.png)![](README_files/figure-markdown_strict/unnamed-chunk-4-3.png)![](README_files/figure-markdown_strict/unnamed-chunk-4-4.png)

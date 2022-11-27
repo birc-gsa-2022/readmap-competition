@@ -90,79 +90,114 @@ status <- read.table('res/status.txt', header = TRUE) |>
 knitr::kable(status, "pipe")
 ```
 
-## Preprocessing performance
+## Preprocessing performance (full competition)
 
 ```{r read_perf}
-pre_perf <- read.csv("res/preprocessing.txt", header = TRUE) |>
+load_pref <- function(fname) {
+  read.csv(fname, header = TRUE) |>
   pivot_longer(-(Chromosomes:Chromosome.length), 
                names_to = "Tool", values_to = "Time") |>
   transform_projects()
-```
-
-```{r plot_perf}
-chrom_lens <- unique(pre_perf$Chromosome.length)
-for (clen in chrom_lens) {
-    chrom_data <- pre_perf |> 
-      filter_genome(clen) |>
-      mutate(TL = str_c(Tool, ' [', Language, ']')) |>
-      group_by(TL) |> 
-      mutate(meanTime = mean(Time))
-    # I have *no* idea why this doesn't work in a mutate any more, but fuck it
-    chrom_data$TL = fct_reorder(chrom_data$TL, desc(chrom_data$meanTime))
-
-  plt <- chrom_data |> 
-    ggplot(aes(x = TL, y = Time, colour = Language, fill = Language)) +
-    geom_violin() +
-    facet_grid(. ~ Chromosome.length, scales = "free_x", space = "free_x") +
-    xlab("") +
-    scale_x_discrete(breaks=chrom_data$TL, labels=chrom_data$Tool) +
-    theme_classic() +
-    scale_fill_brewer(palette="Set2") +
-    scale_colour_brewer(palette="Set2") +
-    theme(legend.position="bottom", 
-          axis.text.x = element_text(angle = -15, vjust = 1.5, hjust=0)) +
-    prep_title(10, clen)
-  print(plt)
 }
 ```
 
-## Mapping performance
-
-```{r read_map}
-map_perf <- read.csv("res/mapping.txt", header = TRUE) |>
-  pivot_longer(-(Chromosomes:Edits), names_to = "Tool", values_to = "Time") |>
-  transform_projects()
-
-edits <- unique(map_perf$Edits)
-read_lengths <- unique(map_perf$Read.length)
-
-for (clen in chrom_lens) {
-  for (rlen in read_lengths) {
-    for (ed in edits) {
-      chrom_data <- map_perf |> 
+```{r plot_perf}
+plot_pref_perf <- function(pre_perf) {
+  chrom_lens <- unique(pre_perf$Chromosome.length)
+  for (clen in chrom_lens) {
+      chrom_data <- pre_perf |> 
         filter_genome(clen) |>
-        filter(Edits == ed) |>
-        filter(Read.length == rlen) |>
         mutate(TL = str_c(Tool, ' [', Language, ']')) |>
         group_by(TL) |> 
         mutate(meanTime = mean(Time))
       # I have *no* idea why this doesn't work in a mutate any more, but fuck it
       chrom_data$TL = fct_reorder(chrom_data$TL, desc(chrom_data$meanTime))
 
-      plt <- chrom_data |> 
-        ggplot(aes(x = TL, y = Time, colour = Language, fill = Language)) +
-        geom_violin() +
-        #facet_grid(Read.length ~ ., scales = "free_x", space = "free_x") +
-        xlab("") +
-        scale_x_discrete(breaks=chrom_data$TL, labels=chrom_data$Tool) +
-        theme_classic() +
-        scale_fill_brewer(palette="Set2") +
-        scale_colour_brewer(palette="Set2") +
-        theme(legend.position="bottom", 
-              axis.text.x = element_text(angle = -15, vjust = 1.5, hjust=0)) +
-        read_title(clen, rlen, ed)
-      print(plt)
+    plt <- chrom_data |> 
+      ggplot(aes(x = TL, y = Time, colour = Language, fill = Language)) +
+      geom_violin() +
+      facet_grid(. ~ Chromosome.length, scales = "free_x", space = "free_x") +
+      xlab("") +
+      scale_x_discrete(breaks=chrom_data$TL, labels=chrom_data$Tool) +
+      theme_classic() +
+      scale_fill_brewer(palette="Set2") +
+      scale_colour_brewer(palette="Set2") +
+      theme(legend.position="bottom", 
+            axis.text.x = element_text(angle = -15, vjust = 1.5, hjust=0)) +
+      prep_title(10, clen)
+    print(plt)
+  }
+}
+```
+
+```{r plot_short}
+load_pref("res/short-preprocessing.txt") |> plot_pref_perf()
+```
+
+## Mapping performance (full list)
+
+```{r read_map}
+load_mapping <- function(fname) {
+  read.csv(fname, header = TRUE) |>
+  pivot_longer(-(Chromosomes:Edits), names_to = "Tool", values_to = "Time") |>
+  transform_projects()
+}
+```
+
+```{r plot_map}
+plot_mapping <- function(map_perf) {
+  chrom_lens <- unique(map_perf$Chromosome.length)
+  read_lengths <- unique(map_perf$Read.length)
+  edits <- unique(map_perf$Edits)
+  
+  for (clen in chrom_lens) {
+    for (rlen in read_lengths) {
+      for (ed in edits) {
+        chrom_data <- map_perf |> 
+          filter_genome(clen) |>
+          filter(Edits == ed) |>
+          filter(Read.length == rlen) |>
+          mutate(TL = str_c(Tool, ' [', Language, ']')) |>
+          group_by(TL) |> 
+          mutate(meanTime = mean(Time))
+        # I have *no* idea why this doesn't work in a mutate any more, but fuck it
+        chrom_data$TL = fct_reorder(chrom_data$TL, desc(chrom_data$meanTime))
+
+        plt <- chrom_data |> 
+          ggplot(aes(x = TL, y = Time, colour = Language, fill = Language)) +
+          geom_violin() +
+          #facet_grid(Read.length ~ ., scales = "free_x", space = "free_x") +
+          xlab("") +
+          scale_x_discrete(breaks=chrom_data$TL, labels=chrom_data$Tool) +
+          theme_classic() +
+          scale_fill_brewer(palette="Set2") +
+          scale_colour_brewer(palette="Set2") +
+          theme(legend.position="bottom", 
+                axis.text.x = element_text(angle = -15, vjust = 1.5, hjust=0)) +
+          read_title(clen, rlen, ed)
+        print(plt)
+      }
     }
   }
 }
+```
+
+```{r}
+load_mapping("res/short-mapping.txt") |> plot_mapping()
+```
+
+## Competitors
+
+These are the teams that are fast enough for a longer run...
+
+### Preprocessing
+
+```{r}
+load_pref("res/long-preprocessing.txt") |> plot_pref_perf()
+```
+
+### Mapping
+
+```{r}
+load_mapping("res/long-mapping.txt") |> plot_mapping()
 ```
