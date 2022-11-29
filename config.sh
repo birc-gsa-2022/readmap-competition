@@ -29,6 +29,7 @@ gsa_reads_lens=(50)
 # Config for the faster ones
 long_teams=(
     project-5-python-armando-christian-perez
+    #project-5-c-o-no
 )
 gsa_long_genome_lens=(10000 20000)
 gsa_long_reads_lens=(200)

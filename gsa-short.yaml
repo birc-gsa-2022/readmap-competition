@@ -5,6 +5,9 @@ tools:
   PROJECT-5-GO-HOLDET:
     preprocess: "{root}/project_repos/project-5-go-holdet/readmap -p {genome}"
     map: "{root}/project_repos/project-5-go-holdet/readmap -d {e} {genome} {reads} > {outfile}"
+  PROJECT-5-C-O-NO:
+    preprocess: "{root}/project_repos/project-5-c-o-no/readmap -p {genome}"
+    map: "{root}/project_repos/project-5-c-o-no/readmap -d {e} {genome} {reads} > {outfile}"
   READMAP-PYTHON:
     preprocess: "{root}/project_repos/readmap-python/readmap -p {genome}"
     map: "{root}/project_repos/readmap-python/readmap -d {e} {genome} {reads} > {outfile}"

@@ -101,7 +101,7 @@ load_pref <- function(fname) {
 }
 ```
 
-```{r plot_perf}
+```{r plot_short_perf}
 plot_pref_perf <- function(pre_perf) {
   chrom_lens <- unique(pre_perf$Chromosome.length)
   for (clen in chrom_lens) {
@@ -130,7 +130,7 @@ plot_pref_perf <- function(pre_perf) {
 }
 ```
 
-```{r plot_short}
+```{r plot_short_pref}
 load_pref("res/short-preprocessing.txt") |> plot_pref_perf()
 ```
 
@@ -182,7 +182,7 @@ plot_mapping <- function(map_perf) {
 }
 ```
 
-```{r}
+```{r plot_short_map}
 load_mapping("res/short-mapping.txt") |> plot_mapping()
 ```
 
@@ -192,12 +192,12 @@ These are the teams that are fast enough for a longer run. Improve your speed to
 
 ### Preprocessing
 
-```{r}
+```{r plot_long_pref}
 load_pref("res/long-preprocessing.txt") |> plot_pref_perf()
 ```
 
 ### Mapping
 
-```{r}
+```{r plot_long_map}
 load_mapping("res/long-mapping.txt") |> plot_mapping()
 ```

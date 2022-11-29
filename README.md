@@ -42,7 +42,7 @@ readmappers that pass the Github Actions tests.
 <tr class="even">
 <td style="text-align: left;">o-no</td>
 <td style="text-align: left;">C</td>
-<td style="text-align: left;">fail</td>
+<td style="text-align: left;">pass</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">quadratic-solution</td>
@@ -54,11 +54,11 @@ readmappers that pass the Github Actions tests.
 
 ## Preprocessing performance (full competition)
 
-![](README_files/figure-markdown_strict/plot_short-1.png)![](README_files/figure-markdown_strict/plot_short-2.png)
+![](README_files/figure-markdown_strict/plot_short_pref-1.png)![](README_files/figure-markdown_strict/plot_short_pref-2.png)
 
 ## Mapping performance (full list)
 
-![](README_files/figure-markdown_strict/unnamed-chunk-2-1.png)![](README_files/figure-markdown_strict/unnamed-chunk-2-2.png)![](README_files/figure-markdown_strict/unnamed-chunk-2-3.png)![](README_files/figure-markdown_strict/unnamed-chunk-2-4.png)
+![](README_files/figure-markdown_strict/plot_short_map-1.png)![](README_files/figure-markdown_strict/plot_short_map-2.png)![](README_files/figure-markdown_strict/plot_short_map-3.png)![](README_files/figure-markdown_strict/plot_short_map-4.png)
 
 ## Competitors
 
@@ -67,8 +67,8 @@ speed to get on it.
 
 ### Preprocessing
 
-![](README_files/figure-markdown_strict/unnamed-chunk-3-1.png)![](README_files/figure-markdown_strict/unnamed-chunk-3-2.png)
+![](README_files/figure-markdown_strict/plot_long_pref-1.png)![](README_files/figure-markdown_strict/plot_long_pref-2.png)
 
 ### Mapping
 
-![](README_files/figure-markdown_strict/unnamed-chunk-4-1.png)![](README_files/figure-markdown_strict/unnamed-chunk-4-2.png)![](README_files/figure-markdown_strict/unnamed-chunk-4-3.png)![](README_files/figure-markdown_strict/unnamed-chunk-4-4.png)
+![](README_files/figure-markdown_strict/plot_long_map-1.png)![](README_files/figure-markdown_strict/plot_long_map-2.png)![](README_files/figure-markdown_strict/plot_long_map-3.png)![](README_files/figure-markdown_strict/plot_long_map-4.png)
