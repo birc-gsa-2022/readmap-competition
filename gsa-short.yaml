@@ -22,7 +22,7 @@ tools:
 reference-tool: READMAP-PYTHON
 
 genomes:
-  length: [1000, 2000]
+  length: [2500, 5000]
   chromosomes: 10
 
 reads:
