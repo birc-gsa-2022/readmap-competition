@@ -3,7 +3,7 @@
 # The organisation and the competing teams
 org="birc-gsa-2022"
 teams=(
-    project-5-python-asg
+    #project-5-python-asg
     project-5-python-armando-christian-perez
     project-5-python-team
     project-5-python-illiterate-apes
@@ -29,7 +29,7 @@ gsa_reads_lens=(50)
 # Config for the faster ones
 long_teams=(
     project-5-python-armando-christian-perez
-    project-5-c-o-no
+    # project-5-c-o-no
 )
 gsa_long_genome_lens=(25000 50000)
 gsa_long_reads_lens=(200)
