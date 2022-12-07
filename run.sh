@@ -1,5 +1,5 @@
-#!/usr/local/bin/bash
-#/opt/homebrew/bin/bash
+#!/opt/homebrew/bin/bash
+#/usr/local/bin/bash
 
 source config.sh
 source scripts/utils.sh

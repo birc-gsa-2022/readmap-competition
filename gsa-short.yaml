@@ -1,7 +1,13 @@
 tools:
+  PROJECT-5-PYTHON-ASG:
+    preprocess: "{root}/project_repos/project-5-python-asg/readmap -p {genome}"
+    map: "{root}/project_repos/project-5-python-asg/readmap -d {e} {genome} {reads} > {outfile}"
   PROJECT-5-PYTHON-ARMANDO-CHRISTIAN-PEREZ:
     preprocess: "{root}/project_repos/project-5-python-armando-christian-perez/readmap -p {genome}"
     map: "{root}/project_repos/project-5-python-armando-christian-perez/readmap -d {e} {genome} {reads} > {outfile}"
+  PROJECT-5-PYTHON-ILLITERATE-APES:
+    preprocess: "{root}/project_repos/project-5-python-illiterate-apes/readmap -p {genome}"
+    map: "{root}/project_repos/project-5-python-illiterate-apes/readmap -d {e} {genome} {reads} > {outfile}"
   PROJECT-5-GO-HOLDET:
     preprocess: "{root}/project_repos/project-5-go-holdet/readmap -p {genome}"
     map: "{root}/project_repos/project-5-go-holdet/readmap -d {e} {genome} {reads} > {outfile}"

@@ -6,12 +6,13 @@ teams=(
     #project-5-python-asg
     project-5-python-armando-christian-perez
     project-5-python-team
-    project-5-python-illiterate-apes
+    #project-5-python-illiterate-apes
+    project-5-python-ms-world-wides
     
     project-5-go-holdet
 
     project-5-c-o-no
-    project-5-c-quadratic-solution
+    # project-5-c-quadratic-solution
 )
 
 mydirs=(
@@ -29,7 +30,8 @@ gsa_reads_lens=(50)
 # Config for the faster ones
 long_teams=(
     project-5-python-armando-christian-perez
-    # project-5-c-o-no
+    project-5-c-o-no
+    project-5-go-holdet
 )
 gsa_long_genome_lens=(25000 50000)
 gsa_long_reads_lens=(200)
